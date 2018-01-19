@@ -8,11 +8,26 @@
 
 .. toctree::
    :maxdepth: 2
-   :caption: 爬虫知识学习
-   :numbered:
+   :caption: 基础篇
 
    基础篇/index
+
+.. toctree::
+   :maxdepth: 2
+   :caption: 中级篇
+
    中级篇/index
+
+
+.. toctree::
+   :maxdepth: 2
+   :caption: 框架篇
+
    框架篇/index
+
+.. toctree::
+   :maxdepth: 2
+   :caption: 分布式篇
+
    分布式篇/index
    
