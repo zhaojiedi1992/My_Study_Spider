@@ -14,5 +14,5 @@
    基础篇/index
    中级篇/index
    框架篇/index
-   分布式/index
+   分布式篇/index
    
