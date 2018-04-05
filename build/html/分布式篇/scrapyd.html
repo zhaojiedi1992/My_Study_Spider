@@ -1,0 +1,295 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>scrapyd &mdash; My_Study_Spider v0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="My_Study_Spider v0.1 documentation" href="../index.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+  <script src="../_static/js/baidu.js"></script>
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> My_Study_Spider
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                v0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">基础篇</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../基础篇/urllib/urllib入门.html">urllib入门</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../基础篇/浏览器调试工具/firefox开发工具使用.html">firefox开发工具使用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../基础篇/浏览器调试工具/chrome开发工具使用.html">chrome开发工具使用</a></li>
+</ul>
+<p class="caption"><span class="caption-text">中级篇</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../中级篇/bs4.html">bs4</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../中级篇/selinium.html">selinium</a></li>
+</ul>
+<p class="caption"><span class="caption-text">框架篇</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../框架篇/pyspider/pyspider入门.html">pyspider入门</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../框架篇/scrapy/scrapy入门.html">scrapy入门</a></li>
+</ul>
+<p class="caption"><span class="caption-text">分布式篇</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="scrapy-redis.html">scrapy-redis</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">My_Study_Spider</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>scrapyd</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/分布式篇/scrapyd.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="scrapyd">
+<h1>scrapyd<a class="headerlink" href="#scrapyd" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id1">
+<h2>安装<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id2">
+<h3>需求环境<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>&gt;=Python 2.6</li>
+<li>&gt;=Twisted 8.0</li>
+<li>&gt;=Scrapy 0.17</li>
+</ul>
+</div>
+<div class="section" id="id3">
+<h3>通用安装<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="o">[</span>root@102 ~<span class="o">]</span>$ pip install scrapyd
+Collecting scrapyd
+Downloading scrapyd-1.2.0-py2.py3-none-any.whl
+Requirement already satisfied: six in /usr/lib/python2.7/site-packages <span class="o">(</span>from scrapyd<span class="o">)</span>
+Requirement already satisfied: Twisted&gt;<span class="o">=</span><span class="m">8</span>.0 in /usr/lib64/python2.7/site-packages <span class="o">(</span>from scrapyd<span class="o">)</span>
+Requirement already satisfied: Scrapy&gt;<span class="o">=</span><span class="m">1</span>.0 in /usr/lib64/python2.7/site-packages <span class="o">(</span>from scrapyd<span class="o">)</span>
+Requirement already satisfied: zope.interface&gt;<span class="o">=</span><span class="m">3</span>.6.0 in /usr/lib64/python2.7/site-packages <span class="o">(</span>from Twisted&gt;<span class="o">=</span><span class="m">8</span>.0-&gt;scrapyd<span class="o">)</span>
+Requirement already satisfied: constantly&gt;<span class="o">=</span><span class="m">15</span>.1 in /usr/lib/python2.7/site-packages <span class="o">(</span>from Twisted&gt;<span class="o">=</span><span class="m">8</span>.0-&gt;scrapyd<span class="o">)</span>
+Requirement already satisfied: incremental&gt;<span class="o">=</span><span class="m">16</span>.10.1 in /usr/lib/python2.7/site-packages <span class="o">(</span>from Twisted&gt;<span class="o">=</span><span class="m">8</span>.0-&gt;scrapyd<span class="o">)</span>
+Requirement already satisfied: Automat&gt;<span class="o">=</span><span class="m">0</span>.3.0 in /usr/lib/python2.7/site-packages <span class="o">(</span>from Twisted&gt;<span class="o">=</span><span class="m">8</span>.0-&gt;scrapyd<span class="o">)</span>
+Requirement already satisfied: hyperlink&gt;<span class="o">=</span><span class="m">17</span>.1.1 in /usr/lib/python2.7/site-packages <span class="o">(</span>from Twisted&gt;<span class="o">=</span><span class="m">8</span>.0-&gt;scrapyd<span class="o">)</span>
+Requirement already satisfied: PyDispatcher&gt;<span class="o">=</span><span class="m">2</span>.0.5 in /usr/lib/python2.7/site-packages <span class="o">(</span>from Scrapy&gt;<span class="o">=</span><span class="m">1</span>.0-&gt;scrapyd<span class="o">)</span>
+Requirement already satisfied: lxml in /usr/lib64/python2.7/site-packages <span class="o">(</span>from Scrapy&gt;<span class="o">=</span><span class="m">1</span>.0-&gt;scrapyd<span class="o">)</span>
+Requirement already satisfied: service-identity in /usr/lib/python2.7/site-packages <span class="o">(</span>from Scrapy&gt;<span class="o">=</span><span class="m">1</span>.0-&gt;scrapyd<span class="o">)</span>
+Requirement already satisfied: w3lib&gt;<span class="o">=</span><span class="m">1</span>.17.0 in /usr/lib/python2.7/site-packages <span class="o">(</span>from Scrapy&gt;<span class="o">=</span><span class="m">1</span>.0-&gt;scrapyd<span class="o">)</span>
+Requirement already satisfied: pyOpenSSL in /usr/lib64/python2.7/site-packages <span class="o">(</span>from Scrapy&gt;<span class="o">=</span><span class="m">1</span>.0-&gt;scrapyd<span class="o">)</span>
+Requirement already satisfied: parsel&gt;<span class="o">=</span><span class="m">1</span>.1 in /usr/lib/python2.7/site-packages <span class="o">(</span>from Scrapy&gt;<span class="o">=</span><span class="m">1</span>.0-&gt;scrapyd<span class="o">)</span>
+Requirement already satisfied: cssselect&gt;<span class="o">=</span><span class="m">0</span>.9 in /usr/lib/python2.7/site-packages <span class="o">(</span>from Scrapy&gt;<span class="o">=</span><span class="m">1</span>.0-&gt;scrapyd<span class="o">)</span>
+Requirement already satisfied: queuelib in /usr/lib/python2.7/site-packages <span class="o">(</span>from Scrapy&gt;<span class="o">=</span><span class="m">1</span>.0-&gt;scrapyd<span class="o">)</span>
+Requirement already satisfied: setuptools in /usr/lib/python2.7/site-packages <span class="o">(</span>from zope.interface&gt;<span class="o">=</span><span class="m">3</span>.6.0-&gt;Twisted&gt;<span class="o">=</span><span class="m">8</span>.0-&gt;scrapyd<span class="o">)</span>
+Requirement already satisfied: attrs in /usr/lib/python2.7/site-packages <span class="o">(</span>from Automat&gt;<span class="o">=</span><span class="m">0</span>.3.0-&gt;Twisted&gt;<span class="o">=</span><span class="m">8</span>.0-&gt;scrapyd<span class="o">)</span>
+Requirement already satisfied: pyasn1 in /usr/lib/python2.7/site-packages <span class="o">(</span>from service-identity-&gt;Scrapy&gt;<span class="o">=</span><span class="m">1</span>.0-&gt;scrapyd<span class="o">)</span>
+Requirement already satisfied: pyasn1-modules in /usr/lib/python2.7/site-packages <span class="o">(</span>from service-identity-&gt;Scrapy&gt;<span class="o">=</span><span class="m">1</span>.0-&gt;scrapyd<span class="o">)</span>
+Installing collected packages: scrapyd
+Successfully installed scrapyd-1.2.0
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">如果提示python.h文件文件缺失或者gcc命令不存在，请安装开发环境yum groupinstall “development tools”。</p>
+</div>
+</div>
+</div>
+<div class="section" id="id4">
+<h2>开发工程<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="api">
+<h2>API接口<a class="headerlink" href="#api" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="id5">
+<h2>配置文件<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, zhaojiedi1992@outlook.com.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>  个人博客 <a href="http://www.linuxpanda.tech/topic/"> LinuxPanda </a> . 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'v0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
