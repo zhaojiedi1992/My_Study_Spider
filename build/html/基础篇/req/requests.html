@@ -1,0 +1,166 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>requests &mdash; My_Study_Spider v0.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=34cd777e"></script>
+      <script src="../../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="猫眼top抓取" href="%E7%8C%AB%E7%9C%BCtop%E6%8A%93%E5%8F%96.html" />
+    <link rel="prev" title="urllib入门" href="urllib%E5%85%A5%E9%97%A8.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            My_Study_Spider
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">基础篇</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="urllib%E5%85%A5%E9%97%A8.html">urllib入门</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">requests</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id2">获取下网页源码</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id3">通过正则表达式进行信息提取</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="%E7%8C%AB%E7%9C%BCtop%E6%8A%93%E5%8F%96.html">猫眼top抓取</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../%E6%B5%8F%E8%A7%88%E5%99%A8%E8%B0%83%E8%AF%95%E5%B7%A5%E5%85%B7/firefox%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8.html">firefox开发工具使用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../%E6%B5%8F%E8%A7%88%E5%99%A8%E8%B0%83%E8%AF%95%E5%B7%A5%E5%85%B7/chrome%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8.html">chrome开发工具使用</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">中级篇</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../%E4%B8%AD%E7%BA%A7%E7%AF%87/bs4.html">bs4</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../%E4%B8%AD%E7%BA%A7%E7%AF%87/selinium.html">selinium</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">框架篇</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../%E6%A1%86%E6%9E%B6%E7%AF%87/pyspider/pyspider%E5%85%A5%E9%97%A8.html">pyspider入门</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../%E6%A1%86%E6%9E%B6%E7%AF%87/scrapy/scrapy%E5%85%A5%E9%97%A8.html">scrapy入门</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">分布式篇</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../%E5%88%86%E5%B8%83%E5%BC%8F%E7%AF%87/scrapy-redis.html">scrapy-redis</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">My_Study_Spider</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../index.html">&lt;no title&gt;</a></li>
+      <li class="breadcrumb-item active">requests</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/基础篇/req/requests.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="requests">
+<h1>requests<a class="headerlink" href="#requests" title="Link to this heading"></a></h1>
+<p><a class="reference external" href="https://requests.readthedocs.io/en/latest/">官方文档</a></p>
+<section id="id2">
+<h2>获取下网页源码<a class="headerlink" href="#id2" title="Link to this heading"></a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="kn">import</span> <span class="nn">requests</span>
+<span class="linenos">2</span><span class="n">url</span><span class="o">=</span><span class="s2">&quot;https://docs.scrapy.org/en/latest/&quot;</span>
+<span class="linenos">3</span><span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+<span class="linenos">4</span><span class="n">html</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">text</span>
+<span class="linenos">5</span><span class="nb">print</span><span class="p">(</span><span class="n">html</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="id3">
+<h2>通过正则表达式进行信息提取<a class="headerlink" href="#id3" title="Link to this heading"></a></h2>
+<p>比如我们想提取到首页的文章的tag信息。 可以通过浏览器的debug获取到关键的信息如下。</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">a</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;tag&quot;</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;font-size: 6px&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;/tag/simile/&quot;</span><span class="p">&gt;</span>simile<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kn">import</span> <span class="nn">requests</span>
+<span class="linenos"> 2</span><span class="kn">import</span> <span class="nn">re</span>
+<span class="linenos"> 3</span><span class="n">url</span><span class="o">=</span><span class="s2">&quot;https://quotes.toscrape.com/&quot;</span>
+<span class="linenos"> 4</span><span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+<span class="linenos"> 5</span><span class="n">html_text</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">text</span>
+<span class="linenos"> 6</span><span class="c1"># print(html)</span>
+<span class="linenos"> 7</span><span class="c1">#   &lt;a class=&quot;tag&quot; style=&quot;font-size: 6px&quot; href=&quot;/tag/simile/&quot;&gt;simile&lt;/a&gt;</span>
+<span class="linenos"> 8</span><span class="n">pattern</span> <span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;&lt;a class=&quot;tag&quot; .*href=&quot;(?P&lt;href&gt;[^&quot;]*?)&quot;&gt;(?P&lt;text&gt;.*?)&lt;\/a&gt;&#39;</span>
+<span class="linenos"> 9</span><span class="n">matches_iter</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">finditer</span><span class="p">(</span><span class="n">pattern</span><span class="p">,</span> <span class="n">html_text</span><span class="p">)</span>
+<span class="linenos">10</span><span class="k">for</span> <span class="n">match</span> <span class="ow">in</span> <span class="n">matches_iter</span><span class="p">:</span>
+<span class="linenos">11</span>    <span class="n">href</span> <span class="o">=</span> <span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="s1">&#39;href&#39;</span><span class="p">)</span>
+<span class="linenos">12</span>    <span class="n">text</span> <span class="o">=</span> <span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="s1">&#39;text&#39;</span><span class="p">)</span>
+<span class="linenos">13</span>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;href: </span><span class="si">{</span><span class="n">href</span><span class="si">}</span><span class="s2">, text: </span><span class="si">{</span><span class="n">text</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="linenos">14</span> 
+</pre></div>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="urllib%E5%85%A5%E9%97%A8.html" class="btn btn-neutral float-left" title="urllib入门" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="%E7%8C%AB%E7%9C%BCtop%E6%8A%93%E5%8F%96.html" class="btn btn-neutral float-right" title="猫眼top抓取" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2018, zhaojiedi1992@outlook.com.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
