@@ -1,10 +1,5 @@
-bs4
-====================================================
-bs4是BeautifulSoup简称，能更好的解析html和xml的。 
-比如我们有如下html文档。
-
-.. code-block:: html
-
+# [节点选择器 start]
+html_content="""
     <div class="panel">
         <div class="panel-heading">
             <h4>Hello</h4>
@@ -21,19 +16,13 @@ bs4是BeautifulSoup简称，能更好的解析html和xml的。
             </ul>
         </div>
     </div>
+"""
 
 
-bs4 节点选择器
-----------------------------------------------------------
+from pyquery import PyQuery as pq
+q = pq(html_content)
+li_list = (q("ul li"))
+for li in li_list :
+    print(li.text)
 
 
-bs  方法选择器
-----------------------------------------------------------
-
-bs  CSS选择器
-----------------------------------------------------------
-
-.. literalinclude:: bs4_demo.py
-   :encoding: utf-8
-   :language: python
-   :linenos:
