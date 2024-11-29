@@ -4,4 +4,7 @@
    bs4
    pyquery
    存储
-   selinium
+   ajax
+   selenium
+   splash
+   验证码

@@ -18,6 +18,17 @@ with open("data.csv", mode='w', newline='', encoding='utf-8') as csvfile:
     for row in data:
         writer.writerow(row)
 
+# 将字典列表转换为DataFrame
+import pandas as pd
+df = pd.DataFrame(data)
+ 
+# 指定CSV文件的文件名
+filename = "output2.csv"
+ 
+# 将DataFrame写入CSV文件
+df.to_csv(filename, index=False, encoding='utf-8-sig')
+
+
 # 写json
 import json
 with open("data.json", "w") as f:

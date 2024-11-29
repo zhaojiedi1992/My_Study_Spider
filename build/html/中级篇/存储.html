@@ -19,8 +19,8 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="selinium" href="selinium.html" />
-    <link rel="prev" title="bs4" href="pyquery.html" /> 
+    <link rel="next" title="ajax" href="ajax.html" />
+    <link rel="prev" title="pyquery" href="pyquery.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -53,14 +53,15 @@
 <p class="caption" role="heading"><span class="caption-text">中级篇</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="bs4.html">bs4</a></li>
-<li class="toctree-l1"><a class="reference internal" href="pyquery.html">bs4</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pyquery.html">pyquery</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">存储</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#id2">文件存储</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#bs">bs  方法选择器</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#bs-css">bs  CSS选择器</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#db">db存储</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="selinium.html">selinium</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ajax.html">ajax</a></li>
+<li class="toctree-l1"><a class="reference internal" href="splash.html">selinium</a></li>
+<li class="toctree-l1"><a class="reference internal" href="%E9%AA%8C%E8%AF%81%E7%A0%81.html">验证码</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">框架篇</span></p>
 <ul>
@@ -122,34 +123,61 @@
 <span class="linenos">18</span>    <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
 <span class="linenos">19</span>        <span class="n">writer</span><span class="o">.</span><span class="n">writerow</span><span class="p">(</span><span class="n">row</span><span class="p">)</span>
 <span class="linenos">20</span>
-<span class="linenos">21</span><span class="c1"># 写json</span>
-<span class="linenos">22</span><span class="kn">import</span> <span class="nn">json</span>
-<span class="linenos">23</span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;data.json&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-<span class="linenos">24</span>    <span class="n">json</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span><span class="n">ensure_ascii</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-<span class="linenos">25</span>
-<span class="linenos">26</span><span class="c1"># 写excel</span>
-<span class="linenos">27</span>
-<span class="linenos">28</span><span class="kn">import</span> <span class="nn">openpyxl</span>
-<span class="linenos">29</span><span class="n">wb</span> <span class="o">=</span> <span class="n">openpyxl</span><span class="o">.</span><span class="n">Workbook</span><span class="p">()</span>
-<span class="linenos">30</span><span class="n">ws</span> <span class="o">=</span> <span class="n">wb</span><span class="o">.</span><span class="n">active</span>
-<span class="linenos">31</span><span class="c1"># 写入表头</span>
-<span class="linenos">32</span><span class="n">ws</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="s2">&quot;name&quot;</span><span class="p">,</span> <span class="s2">&quot;age&quot;</span><span class="p">])</span>
-<span class="linenos">33</span> 
-<span class="linenos">34</span><span class="c1"># 写入数据</span>
-<span class="linenos">35</span><span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
-<span class="linenos">36</span>    <span class="n">ws</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="n">item</span><span class="p">[</span><span class="s2">&quot;name&quot;</span><span class="p">],</span> <span class="n">item</span><span class="p">[</span><span class="s2">&quot;age&quot;</span><span class="p">]])</span>
-<span class="linenos">37</span> 
-<span class="linenos">38</span><span class="c1"># 保存工作簿到文件</span>
-<span class="linenos">39</span><span class="n">wb</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="s2">&quot;output.xlsx&quot;</span><span class="p">)</span>
-<span class="linenos">40</span>
+<span class="linenos">21</span><span class="c1"># 将字典列表转换为DataFrame</span>
+<span class="linenos">22</span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="linenos">23</span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+<span class="linenos">24</span> 
+<span class="linenos">25</span><span class="c1"># 指定CSV文件的文件名</span>
+<span class="linenos">26</span><span class="n">filename</span> <span class="o">=</span> <span class="s2">&quot;output2.csv&quot;</span>
+<span class="linenos">27</span> 
+<span class="linenos">28</span><span class="c1"># 将DataFrame写入CSV文件</span>
+<span class="linenos">29</span><span class="n">df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf-8-sig&#39;</span><span class="p">)</span>
+<span class="linenos">30</span>
+<span class="linenos">31</span>
+<span class="linenos">32</span><span class="c1"># 写json</span>
+<span class="linenos">33</span><span class="kn">import</span> <span class="nn">json</span>
+<span class="linenos">34</span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;data.json&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+<span class="linenos">35</span>    <span class="n">json</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span><span class="n">ensure_ascii</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="linenos">36</span>
+<span class="linenos">37</span><span class="c1"># 写excel</span>
+<span class="linenos">38</span>
+<span class="linenos">39</span><span class="kn">import</span> <span class="nn">openpyxl</span>
+<span class="linenos">40</span><span class="n">wb</span> <span class="o">=</span> <span class="n">openpyxl</span><span class="o">.</span><span class="n">Workbook</span><span class="p">()</span>
+<span class="linenos">41</span><span class="n">ws</span> <span class="o">=</span> <span class="n">wb</span><span class="o">.</span><span class="n">active</span>
+<span class="linenos">42</span><span class="c1"># 写入表头</span>
+<span class="linenos">43</span><span class="n">ws</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="s2">&quot;name&quot;</span><span class="p">,</span> <span class="s2">&quot;age&quot;</span><span class="p">])</span>
+<span class="linenos">44</span> 
+<span class="linenos">45</span><span class="c1"># 写入数据</span>
+<span class="linenos">46</span><span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
+<span class="linenos">47</span>    <span class="n">ws</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="n">item</span><span class="p">[</span><span class="s2">&quot;name&quot;</span><span class="p">],</span> <span class="n">item</span><span class="p">[</span><span class="s2">&quot;age&quot;</span><span class="p">]])</span>
+<span class="linenos">48</span> 
+<span class="linenos">49</span><span class="c1"># 保存工作簿到文件</span>
+<span class="linenos">50</span><span class="n">wb</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="s2">&quot;output.xlsx&quot;</span><span class="p">)</span>
+<span class="linenos">51</span>
 </pre></div>
 </div>
 </section>
-<section id="bs">
-<h2>bs  方法选择器<a class="headerlink" href="#bs" title="Link to this heading"></a></h2>
-</section>
-<section id="bs-css">
-<h2>bs  CSS选择器<a class="headerlink" href="#bs-css" title="Link to this heading"></a></h2>
+<section id="db">
+<h2>db存储<a class="headerlink" href="#db" title="Link to this heading"></a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="n">data</span> <span class="o">=</span> <span class="p">[</span>
+<span class="linenos"> 2</span>    <span class="p">{</span><span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;张三&quot;</span><span class="p">,</span> <span class="s2">&quot;age&quot;</span><span class="p">:</span> <span class="mi">18</span><span class="p">},</span>
+<span class="linenos"> 3</span>    <span class="p">{</span><span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;李四&quot;</span><span class="p">,</span> <span class="s2">&quot;age&quot;</span><span class="p">:</span> <span class="mi">20</span><span class="p">},</span>
+<span class="linenos"> 4</span>    <span class="p">{</span><span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;王五&quot;</span><span class="p">,</span> <span class="s2">&quot;age&quot;</span><span class="p">:</span> <span class="mi">22</span><span class="p">},</span>
+<span class="linenos"> 5</span><span class="p">]</span>
+<span class="linenos"> 6</span><span class="kn">import</span> <span class="nn">pymysql</span>  
+<span class="linenos"> 7</span>
+<span class="linenos"> 8</span><span class="n">db</span> <span class="o">=</span> <span class="n">pymysql</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="n">host</span><span class="o">=</span><span class="s1">&#39;localhost&#39;</span><span class="p">,</span><span class="n">user</span><span class="o">=</span><span class="s1">&#39;root&#39;</span><span class="p">,</span> <span class="n">password</span><span class="o">=</span><span class="s1">&#39;123456&#39;</span><span class="p">,</span> <span class="n">port</span><span class="o">=</span><span class="mi">3306</span><span class="p">)</span>  
+<span class="linenos"> 9</span><span class="n">cursor</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
+<span class="linenos">10</span><span class="n">sql</span> <span class="o">=</span> <span class="s1">&#39;INSERT INTO students(name, age) values( </span><span class="si">%s</span><span class="s1">, </span><span class="si">%s</span><span class="s1">)&#39;</span>
+<span class="linenos">11</span><span class="k">for</span> <span class="n">data_item</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span> 
+<span class="linenos">12</span>    <span class="k">try</span><span class="p">:</span>
+<span class="linenos">13</span>        <span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">sql</span><span class="p">,</span> <span class="p">(</span><span class="n">data_item</span><span class="p">[</span><span class="s2">&quot;name&quot;</span><span class="p">],</span> <span class="n">data_item</span><span class="p">[</span><span class="s2">&quot;age&quot;</span><span class="p">]))</span>
+<span class="linenos">14</span>        <span class="n">db</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+<span class="linenos">15</span>    <span class="k">except</span><span class="p">:</span>
+<span class="linenos">16</span>        <span class="n">db</span><span class="o">.</span><span class="n">rollback</span><span class="p">()</span>
+<span class="linenos">17</span><span class="n">db</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+</div>
 </section>
 </section>
 
@@ -157,8 +185,8 @@
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="pyquery.html" class="btn btn-neutral float-left" title="bs4" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="selinium.html" class="btn btn-neutral float-right" title="selinium" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="pyquery.html" class="btn btn-neutral float-left" title="pyquery" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="ajax.html" class="btn btn-neutral float-right" title="ajax" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

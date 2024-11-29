@@ -6,7 +6,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>&lt;no title&gt; &mdash; My_Study_Spider v0.1 documentation</title>
+  <title>selenium &mdash; My_Study_Spider v0.1 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
 
@@ -18,9 +18,7 @@
       <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="bs4" href="bs4.html" />
-    <link rel="prev" title="chrome开发工具使用" href="../%E5%9F%BA%E7%A1%80%E7%AF%87/%E6%B5%8F%E8%A7%88%E5%99%A8%E8%B0%83%E8%AF%95%E5%B7%A5%E5%85%B7/chrome%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8.html" /> 
+    <link rel="search" title="Search" href="../search.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -56,7 +54,6 @@
 <li class="toctree-l1"><a class="reference internal" href="pyquery.html">pyquery</a></li>
 <li class="toctree-l1"><a class="reference internal" href="%E5%AD%98%E5%82%A8.html">存储</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ajax.html">ajax</a></li>
-<li class="toctree-l1"><a class="reference internal" href="selenium.html">selenium</a></li>
 <li class="toctree-l1"><a class="reference internal" href="splash.html">selinium</a></li>
 <li class="toctree-l1"><a class="reference internal" href="%E9%AA%8C%E8%AF%81%E7%A0%81.html">验证码</a></li>
 </ul>
@@ -85,9 +82,9 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
-      <li class="breadcrumb-item active">&lt;no title&gt;</li>
+      <li class="breadcrumb-item active">selenium</li>
       <li class="wy-breadcrumbs-aside">
-            <a href="../_sources/中级篇/index.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/中级篇/selenium.rst.txt" rel="nofollow"> View page source</a>
       </li>
   </ul>
   <hr/>
@@ -95,51 +92,30 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="bs4.html">bs4</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="bs4.html#id1">bs4 节点选择器</a></li>
-<li class="toctree-l2"><a class="reference internal" href="bs4.html#bs">bs  方法选择器</a></li>
-<li class="toctree-l2"><a class="reference internal" href="bs4.html#bs-css">bs  CSS选择器</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="pyquery.html">pyquery</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="pyquery.html#bs4">bs4 节点选择器</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pyquery.html#bs">bs  方法选择器</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pyquery.html#bs-css">bs  CSS选择器</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="%E5%AD%98%E5%82%A8.html">存储</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="%E5%AD%98%E5%82%A8.html#id2">文件存储</a></li>
-<li class="toctree-l2"><a class="reference internal" href="%E5%AD%98%E5%82%A8.html#db">db存储</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="ajax.html">ajax</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="ajax.html#id1">如何提取ajax请求</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="selenium.html">selenium</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="selenium.html#id1">入门selenium</a></li>
-<li class="toctree-l2"><a class="reference internal" href="selenium.html#id2">基本操作</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="splash.html">selinium</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="splash.html#selinium-test1">selinium test1</a></li>
-<li class="toctree-l2"><a class="reference internal" href="splash.html#selinium-test2">selinium test2</a></li>
-<li class="toctree-l2"><a class="reference internal" href="splash.html#selinium-test3">selinium test3</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="%E9%AA%8C%E8%AF%81%E7%A0%81.html">验证码</a></li>
-</ul>
+  <section id="selenium">
+<h1>selenium<a class="headerlink" href="#selenium" title="Link to this heading"></a></h1>
+<p>对于动态渲染类页面，如果能通过ajax直接获取数据那是最好的， 如果ajax处理的数据还需要浏览器的js相关复杂处理，那可能就需要selenium了。
+做到可见即可爬。对于一些 JavaScript 动态渲染的页面来说，此种抓取方式非常有效。</p>
+<section id="id1">
+<h2>入门selenium<a class="headerlink" href="#id1" title="Link to this heading"></a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">selenium</span> <span class="kn">import</span> <span class="n">webdriver</span>
+<span class="n">browser</span> <span class="o">=</span> <span class="n">webdriver</span><span class="o">.</span><span class="n">Chrome</span><span class="p">()</span>
+<span class="n">browser</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;https://www.taobao.com&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">browser</span><span class="o">.</span><span class="n">page_source</span><span class="p">)</span>
+<span class="n">browser</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
 </div>
+</section>
+<section id="id2">
+<h2>基本操作<a class="headerlink" href="#id2" title="Link to this heading"></a></h2>
+<p>通过selenium启动一个浏览器，我们需要进行元素查找，进行交换操作（点击、填充、拖拽）。甚至可以执行自定义的javascript脚本。</p>
+</section>
+</section>
 
 
            </div>
           </div>
-          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="../%E5%9F%BA%E7%A1%80%E7%AF%87/%E6%B5%8F%E8%A7%88%E5%99%A8%E8%B0%83%E8%AF%95%E5%B7%A5%E5%85%B7/chrome%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8.html" class="btn btn-neutral float-left" title="chrome开发工具使用" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="bs4.html" class="btn btn-neutral float-right" title="bs4" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-    </div>
+          <footer>
 
   <hr/>
 

@@ -1,7 +1,6 @@
-bs4
+pyquery
 ====================================================
-bs4是BeautifulSoup简称，能更好的解析html和xml的。 
-比如我们有如下html文档。
+pyquery 是一个基于lxml的HTML解析库，可以用来解析和操作HTML文档。 他是可以操作html文档的， 这里我们主要演示查询能力。
 
 .. code-block:: html
 

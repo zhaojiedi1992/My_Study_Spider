@@ -6,7 +6,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>bs4 &mdash; My_Study_Spider v0.1 documentation</title>
+  <title>pyquery &mdash; My_Study_Spider v0.1 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
 
@@ -53,14 +53,16 @@
 <p class="caption" role="heading"><span class="caption-text">中级篇</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="bs4.html">bs4</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">bs4</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#id1">bs4 节点选择器</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">pyquery</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#bs4">bs4 节点选择器</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#bs">bs  方法选择器</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#bs-css">bs  CSS选择器</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="%E5%AD%98%E5%82%A8.html">存储</a></li>
-<li class="toctree-l1"><a class="reference internal" href="selinium.html">selinium</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ajax.html">ajax</a></li>
+<li class="toctree-l1"><a class="reference internal" href="splash.html">selinium</a></li>
+<li class="toctree-l1"><a class="reference internal" href="%E9%AA%8C%E8%AF%81%E7%A0%81.html">验证码</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">框架篇</span></p>
 <ul>
@@ -88,7 +90,7 @@
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
           <li class="breadcrumb-item"><a href="index.html">&lt;no title&gt;</a></li>
-      <li class="breadcrumb-item active">bs4</li>
+      <li class="breadcrumb-item active">pyquery</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../_sources/中级篇/pyquery.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -98,10 +100,9 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="bs4">
-<h1>bs4<a class="headerlink" href="#bs4" title="Link to this heading"></a></h1>
-<p>bs4是BeautifulSoup简称，能更好的解析html和xml的。
-比如我们有如下html文档。</p>
+  <section id="pyquery">
+<h1>pyquery<a class="headerlink" href="#pyquery" title="Link to this heading"></a></h1>
+<p>pyquery 是一个基于lxml的HTML解析库，可以用来解析和操作HTML文档。 他是可以操作html文档的， 这里我们主要演示查询能力。</p>
 <div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;panel&quot;</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;panel-heading&quot;</span><span class="p">&gt;</span>
         <span class="p">&lt;</span><span class="nt">h4</span><span class="p">&gt;</span>Hello<span class="p">&lt;/</span><span class="nt">h4</span><span class="p">&gt;</span>
@@ -120,8 +121,8 @@
 <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
 </pre></div>
 </div>
-<section id="id1">
-<h2>bs4 节点选择器<a class="headerlink" href="#id1" title="Link to this heading"></a></h2>
+<section id="bs4">
+<h2>bs4 节点选择器<a class="headerlink" href="#bs4" title="Link to this heading"></a></h2>
 </section>
 <section id="bs">
 <h2>bs  方法选择器<a class="headerlink" href="#bs" title="Link to this heading"></a></h2>
